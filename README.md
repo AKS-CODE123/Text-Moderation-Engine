@@ -1,65 +1,66 @@
-# Toxicity Detector (Deep Learning)
+# Text-Moderation-Engine (Deep Learning)
 
-This project is a deep learning model that detects toxic comments from text.
-It takes a sentence as input and predicts whether it belongs to categories like insult, threat, obscene, etc.
+This project is a simple deep learning model that tries to detect toxic comments from text input.  
+You can give it a sentence, and it will predict whether it falls into categories like insult, threat, obscene, etc.
 
-This project was built to understand how real-world NLP pipelines work, from text preprocessing to model training and prediction.
+I mainly built this project to get a better understanding of how real NLP pipelines work — starting from raw text all the way to predictions.
 
 ---
 
 ## How it works
 
-1. The input text is converted into numbers using a TextVectorization layer
-2. The processed text is passed through a Bidirectional LSTM model
-3. The model outputs probabilities for different toxicity labels
+The workflow is pretty straightforward:
+
+- First, the input text is converted into numbers using a TextVectorization layer  
+- Then those vectors are passed into a Bidirectional LSTM model  
+- Finally, the model outputs probabilities for different toxicity labels  
 
 ---
 
-## Tech Used
+## Tech stack
 
-* Python
-* TensorFlow / Keras
-* Pandas
+- Python  
+- TensorFlow / Keras  
+- Pandas  
 
 ---
 
-## Project Structure
+## Project structure
 
-* `Train.py` → trains the model
-* `Predict.py` → loads model and makes predictions
-* `Toxicity_Detector.h5` → saved trained model
-* `.gitignore` → ignores dataset and unnecessary files
+- `Train.py` → used to train the model  
+- `Predict.py` → loads the trained model and runs predictions  
+- `Toxicity_Detector.h5` → saved model file  
+- `.gitignore` → ignores dataset and other unnecessary files  
 
 ---
 
 ## Dataset
 
-The dataset used in this project is around 66 MB and is not included in this repository.
+The dataset is around 66 MB, so it’s not included in the repo.
 
-To run the project:
+To run this project:
 
-1. Download the dataset from the original source from kaggle from the link "https://www.kaggle.com/datasets/julian3833/jigsaw-toxic-comment-classification-challenge"
-2. Place it in the project folder
-3. Update the file path in the code if needed
-4. Train the model using `Train.py`
-5. After training on the data test the model using `Predict.py`
-
----
-
-## Why this project?
-
-This project focuses on understanding:
-
-* How text is converted into numerical form
-* How LSTM models process sequential data
-* How to maintain consistency between training and prediction
+1. Download the dataset from Kaggle:  
+   https://www.kaggle.com/datasets/julian3833/jigsaw-toxic-comment-classification-challenge  
+2. Put the dataset in the project folder  
+3. Update file paths in the code if needed  
+4. Run `Train.py` to train the model  
+5. Use `Predict.py` to check predictions  
 
 ---
 
-## Future Improvements
+## Why I made this
 
-* Improve model accuracy
-* Reduce training time
-* Build a simple interface for predictions
+Mostly to understand a few things better:
 
+- how text is converted into numerical format  
+- how LSTMs deal with sequential data  
+- and how to keep things consistent between training and prediction  
 
+---
+
+## Things I might improve later
+
+- Try to improve accuracy  
+- Make training faster  
+- Maybe add a small UI so it's easier to test inputs  
