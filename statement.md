@@ -1,44 +1,36 @@
-# Problem Statement
 
-With the growth of online platforms, user-generated content such as comments and posts has increased rapidly. While this improves communication, it also leads to the spread of toxic, abusive, and harmful language. Many users post offensive or inappropriate content without considering its impact, which creates an unhealthy online environment.
 
-The main issue I wanted to address is that manually monitoring such large volumes of text is not practical. Human moderation is slow and cannot scale with the amount of content being generated every second. At the same time, basic rule-based systems often fail to understand context and miss subtle forms of toxicity.
+### Project: Text Moderation Engine
 
-To solve this, I built a deep learning-based toxicity detection system. The idea was to automatically analyze text and classify it into multiple toxicity categories. The system uses a neural network model that can understand the context of words in a sentence rather than just matching keywords.
+The sheer amount of user-generated content online today makes manual moderation basically impossible. You can't scale a team of humans to read every single comment being posted 24/7. Most platforms still use basic word-filters, but those are easy to bypass and they don't understand context—like, they might flag a word that isn’t actually being used in a toxic way.
 
----
-
-# Objective
-
-The main goals of this project were:
-
-* Build a multi-label classification model to detect different types of toxic comments
-* Use a TextVectorization layer to convert raw text into numerical form
-* Implement a Bidirectional LSTM model to capture context from both directions
-* Train the model on a labeled dataset of comments
-* Ensure consistency between training and prediction by saving and reusing the vocabulary
-* Evaluate the model based on its prediction outputs
+I built this **Text Moderation Engine** to solve that using deep learning. Instead of just looking for "bad words," the model analyzes the intent and context of a sentence to classify it into different types of toxicity automatically.
 
 ---
 
-# Scope of the Project
+### Key Objectives
 
-This project is designed to work with textual data in English. It focuses only on detecting toxicity in written comments and does not handle other forms of data such as images, audio, or video.
+The main focus of this project was to move away from rigid, rule-based systems and build something more fluid:
 
-The model is trained on a predefined dataset, so its performance depends on the quality and diversity of that data. While it can detect common patterns of toxicity, it may struggle with very new or highly nuanced language.
-
----
-
-# Expected Outcomes
-
-At the end of this project, the following outcomes were achieved:
-
-* A trained deep learning model capable of detecting toxic comments
-* A multi-label classification system that predicts different types of toxicity
-* A consistent pipeline for training and prediction using the same vocabulary
-* A working prediction system that can take user input and return toxicity scores
-* A better understanding of how NLP models process and classify text data
+*   **Multi-label Classification:** I wanted the model to be able to tag a single comment with multiple labels (like "toxic," "threat," or "insult") at the same time.
+*   **Text Vectorization:** I used a TextVectorization layer to handle the preprocessing—stripping punctuation, lowercasing, and mapping words to integers so the neural network can process them.
+*   **Bidirectional LSTM:** This is the core of the model. Standard RNNs only read in one direction, but a Bi-LSTM reads the sentence both ways. This is huge for moderation because the meaning of a word usually depends on what comes after it, not just what came before.
+*   **Vocabulary Persistence:** A common mistake is using a different vocab for training and testing. I made sure to save the specific vocabulary from the training phase so the model stays consistent when it's making real-world predictions.
 
 ---
 
-This project demonstrates how deep learning can be used to automate content moderation and highlights the importance of maintaining consistency in NLP pipelines.
+### Scope & Limits
+
+For now, the engine is built specifically for English text. It’s strictly for text-based comments, so it doesn't handle images or audio files. Since it’s trained on a static dataset, its "knowledge" of toxicity is based on what’s in that data—it’s great at catching standard abuse, but it’s always going to be a work in progress when it comes to brand-new slang or super subtle sarcasm.
+
+---
+
+### Final Outcomes
+
+By the end of the project, I had a working pipeline that takes a raw string and returns a set of toxicity scores. 
+
+*   Successfully trained a model that can flag harmful content in real-time.
+*   Implemented a multi-label output system that gives a nuanced breakdown of the text.
+*   Created a consistent training-to-prediction workflow that doesn't break when you feed it new data.
+
+Basically, it's a way to automate the "dirty work" of content moderation, making it a lot easier to maintain a decent environment in online communities without needing a massive team of moderators.
