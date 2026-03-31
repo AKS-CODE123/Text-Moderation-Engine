@@ -30,7 +30,6 @@ The workflow is pretty straightforward:
 - `Train.py` → used to train the model  
 - `Predict.py` → loads the trained model and runs predictions  
 - `Toxicity_Detector.h5` → saved model file  
-- `.gitignore` → ignores dataset and other unnecessary files  
 
 ---
 
