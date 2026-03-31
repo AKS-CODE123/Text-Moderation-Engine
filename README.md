@@ -7,16 +7,19 @@ I built this mainly to understand how an actual NLP pipeline works in practice �
 
 ---
 
-## Features
+## ✦ Features
 
-* Can identify different types of toxic content
-* Uses a Bidirectional LSTM to understand context from both sides
-* Covers the full pipeline (preprocessing → training → prediction)
-* Outputs probabilities instead of just yes/no labels
+&#10148; Can identify different types of toxic content
+
+&#10148; Uses a Bidirectional LSTM to understand context from both sides
+
+&#10148; Covers the full pipeline (preprocessing → training → prediction)
+
+&#10148; Outputs probabilities instead of just yes/no labels
 
 ---
 
-## How it works
+## ✦ How it works
 
 The overall idea is pretty straightforward:
 
@@ -29,7 +32,7 @@ Finally, the model outputs probability scores for each toxicity category.
 
 ---
 
-## Tech stack
+## ✦ Tech stack
 
 * Python
 * TensorFlow / Keras
@@ -37,7 +40,7 @@ Finally, the model outputs probability scores for each toxicity category.
 
 ---
 
-## Project structure
+## ✦ Project structure
 
 ```
 Toxicity-Detector/
@@ -49,7 +52,7 @@ Toxicity-Detector/
 
 ---
 
-## Dataset
+## ✦ Dataset
 
 The dataset used here is around 66 MB, so it’s not included in the repo.
 
@@ -76,7 +79,7 @@ python Predict.py
 
 ---
 
-## Why I made this
+## ✦ Why I made this
 
 Mostly to get hands-on experience with:
 
@@ -86,7 +89,7 @@ Mostly to get hands-on experience with:
 
 ---
 
-## Future improvements
+## ✦Future improvements
 
 * Try improving accuracy (maybe different architectures)
 * Reduce training time
@@ -94,13 +97,13 @@ Mostly to get hands-on experience with:
 
 ---
 
-## Contributing
+## ✦ Contributing
 
 If you want to improve anything or experiment with it, feel free to fork and make changes.
 
 ---
 
-## Acknowledgment
+## ✦ Acknowledgment
 
 Dataset taken from Kaggle’s Toxic Comment Classification Challenge.
 
