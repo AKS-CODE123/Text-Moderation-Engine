@@ -4,7 +4,7 @@ from tensorflow.keras.layers import TextVectorization
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dropout, Bidirectional, Dense, Embedding
 
-df = pd.read_csv("D:\\COLLAGE PROJECT\\Toxicity Detector\\train.csv")
+df = pd.read_csv("D:\\COLLAGE PROJECT\\Text-Moderation Engine\\train.csv")
 
 X = df['comment_text']
 y = df[df.columns[2:]].values
